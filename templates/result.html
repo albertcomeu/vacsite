@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Vacancies obtained by Method 1:</h1>
+    <ul>
+        {% for vacancy in vacancies_method1 %}
+            <li>{{ vacancy }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Vacancies obtained by Method 2:</h1>
+    <ul>
+        {% for vacancy in vacancies_method2 %}
+            <li>{{ vacancy }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Estimated Salary: {{ estimated_salary }}</h2>
+</body>
+</html>
