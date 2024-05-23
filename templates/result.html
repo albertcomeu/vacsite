@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+    <title>Результаты поиска вакансий</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleout.css') }}">
 </head>
 <body>
-    <h1>Vacancies obtained by Method 1:</h1>
-    <ul>
-        {% for vacancy in vacancies_method1 %}
-            <li>{{ vacancy }}</li>
-        {% endfor %}
-    </ul>
-
-    <h1>Vacancies obtained by Method 2:</h1>
-    <ul>
-        {% for vacancy in vacancies_method2 %}
-            <li>{{ vacancy }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Estimated Salary: {{ estimated_salary }}</h2>
+    <div class="container">
+        <header>
+            <div class="title-container">
+                <h1>WH</h1>
+                <h2>Working Hive</h2>
+            </div>
+        </header>
+        <section class="results">
+            <h3>Результаты поиска</h3>
+            <div class="estimated-salary">
+                <h4>Оценка заработной платы: {{ estimated_salary }}</h4>
+            </div>
+            <div class="method-results">
+                <h4>Метод 1</h4>
+                <ul>
+                    {% for vacancy in vacancies_method1[:8] %}
+                    <li>
+                        <strong>{{ vacancy['Название вакансии'] }}</strong><br>
+                        Зарплата: {{ vacancy['Зарплата'] }}<br>
+                        <a href="{{ vacancy['Ссылка'] }}">Ссылка на вакансию</a><br>
+                        {% if vacancy['Рекомендации по скиллам'] %}
+                        Рекомендации по скиллам: {{ vacancy['Рекомендации по скиллам'] }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="method-results">
+                <h4>Метод 2</h4>
+                <ul>
+                    {% for vacancy in vacancies_method2[:8] %}
+                    <li>
+                        <strong>{{ vacancy['Название вакансии'] }}</strong><br>
+                        <a href="{{ vacancy['Ссылка'] }}">Ссылка на вакансию</a><br>
+                        {% if vacancy['Рекомендации по скиллам'] %}
+                        Рекомендации по скиллам: {{ vacancy['Рекомендации по скиллам'] }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li>Создайте резюме, не забудьте указать желаемую должность и ключевые навыки</li>
+                <li>Загрузите резюме на сайт в формате pdf, txt, Excel, Word</li>
+                <li>Нажмите "Поиск" и вам будут представлены все подходящие вакансии</li>
+            </ul>
+        </footer>
+    </div>
 </body>
 </html>

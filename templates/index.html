@@ -1,15 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload File</title>
+    <title>Working Hive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Upload File</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" id="file">
-        <input type="submit" value="Upload">
-    </form>
+    <div class="container">
+        <header>
+            <div class="hex-container left">
+                <div class="hex-row">
+                    <div class="hex"></div>
+                    <div class="hex"></div>
+                    <div class="hex"></div>
+                </div>
+                <div class="hex-row offset">
+                    <div class="hex"></div>
+                    <div class="hex"></div>
+                </div>
+            </div>
+            <div class="title-container">
+                <h1>WH</h1>
+                <h2>Working Hive</h2>
+                <p>Поиск вакансий на основе резюме кандидатов</p>
+            </div>
+            <div class="hex-container right">
+                <div class="hex-row">
+                    <div class="hex"></div>
+                    <div class="hex"></div>
+                    <div class="hex"></div>
+                </div>
+                <div class="hex-row offset">
+                    <div class="hex"></div>
+                    <div class="hex"></div>
+                </div>
+            </div>
+        </header>
+        <section class="advantages">
+            <h3>Наши преимущества</h3>
+            <div class="advantage-list">
+                <div class="advantage-item">Широкий выбор вакансий на рынке труда</div>
+                <div class="advantage-item">Точное соответствие вакансий резюме</div>
+                <div class="advantage-item">Удобство использования нашего сервиса</div>
+                <div class="advantage-item">Безопасность и конфиденциальность</div>
+            </div>
+        </section>
+        <section class="actions">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Загрузить резюме</button>
+            </form>
+        </section>
+        <section id="results">
+            <!-- Результаты будут отображаться здесь -->
+        </section>
+        <footer>
+            <ul>
+                <li>Создайте резюме, не забудьте указать желаемую должность и ключевые навыки</li>
+                <li>Загрузите резюме на сайт в формате pdf, txt, Excel, Word</li>
+                <li>Нажмите "Поиск" и вам будут представлены все подходящие вакансии</li>
+            </ul>
+        </footer>
+    </div>
 </body>
 </html>
