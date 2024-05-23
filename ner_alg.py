@@ -44,11 +44,9 @@ class Ner_skills:
 
             try:
 
-                similar_tags = self.find_similar_tags(el, 0.85)
+                #similar_tags = self.find_similar_tags(el, 0.85)
 
-                if similar_tags:
-                    if similar_tags[0] != '1':
-                        sim_word.append(similar_tags[0])
+                sim_word.append(el)
 
             except KeyError:
                 continue

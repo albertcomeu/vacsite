@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 import logging
@@ -28,7 +28,7 @@ def processing_resume(resumestr):
 # Named Entity Recognition (NER) processing function
 def ner_process(resume, vacancy):
     if vacancy:
-        skill_vector = list(n.find_words(vacancy) - resume)
+        skill_vector = list(n.find_words(vacancy))
         if skill_vector:
             return skill_vector
         return []
@@ -67,11 +67,9 @@ def upload_file():
                 for page in reader.pages:
                     resumestr += page.extract_text()
 
-            print(resumestr)
-
             # Resume processing
             res = processing_resume(resumestr)
-            resume_skill_vector = n.find_words(resumestr)
+            resume_skill_vector = resumestr
 
             vacancies_method1 = []
             for i in range(min(len(res), 15)):
@@ -96,14 +94,13 @@ def upload_file():
 
                 vacancies_method1.append(vacancy_info)
 
-            print('Ожидание 2-ого метода...(может занять несколько минут)')
+            logging.info('Ожидание 2-ого метода...(может занять несколько минут)')
 
             c = Count(resumestr)
             c.fill_req()
             final_vacancies, salary = c.get_rec_v_and_salary()
             vacancies_method2 = []
             for vacancy in final_vacancies:
-                print(final_vacancies)
                 vacancy_info = {'Название вакансии': vacancy['Название вакансии: '],
                                 'Ссылка': vacancy['Ссылка на вкансию: ']}
                 skill_vector = ner_process(resume_skill_vector, vacancy['требования'])

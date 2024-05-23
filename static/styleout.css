@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    padding: 20px 0;
+    position: relative;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #666;
+}
+
+.results {
+    text-align: left;
+}
+
+.results h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.estimated-salary {
+    background-color: #fbb03b;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.method-results {
+    margin-bottom: 40px;
+}
+
+.method-results h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.method-results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.method-results li {
+    background-color: #f9f9f9;
+    border: 2px solid #fbb03b;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.method-results li a {
+    color: #fbb03b;
+    text-decoration: none;
+}
+
+.method-results li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: left;
+    margin-top: 40px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+footer ul li::before {
+    content: '●';
+    color: #fbb03b;
+    position: absolute;
+    left: 0;
+}

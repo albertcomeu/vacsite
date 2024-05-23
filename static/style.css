@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.hex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hex-row {
+    display: flex;
+    justify-content: center;
+}
+
+.hex-row.offset {
+    margin-left: 20px; /* сдвиг второй строки */
+}
+
+.title-container {
+    text-align: center;
+    flex-grow: 1;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #666;
+}
+
+header p {
+    color: #999;
+}
+
+.hex {
+    width: 50px;
+    height: 29px;
+    background-color: transparent;
+    position: relative;
+    margin: 15px 0;
+}
+
+.hex:before,
+.hex:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+
+.hex:before {
+    bottom: 100%;
+    border-bottom: 14.5px solid #fbb03b;
+}
+
+.hex:after {
+    top: 100%;
+    width: 0;
+    border-top: 14.5px solid #fbb03b;
+}
+
+.hex {
+    background-color: #fbb03b;
+    display: inline-block;
+    margin: 2px;
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+}
+
+/* Polygon 18 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 180px;
+height: 180px;
+left: 1498px;
+top: 217px;
+
+border: 8px solid #F3AB1F;
+border-radius: 8px;
+transform: rotate(-90deg);
+
+
+.hex-row.offset {
+    margin-left: 10px; /* увеличение расстояния между рядами */
+    perspective: 500px; /* задаем точку перспективы */
+}
+
+.hex {
+    background-color: #fbb03b;
+    display: inline-block;
+    margin: 2px;
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+    transform: rotateX(0deg) rotateY(0deg); /* наклоняем шестиугольники в нужном направлении */
+}
+
+.advantages {
+    text-align: left;
+    margin-top: 40px;
+}
+
+.advantages h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.advantage-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.advantage-item {
+    width: 45%;
+    background-color: white;
+    border: 2px solid #fbb03b;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.actions {
+    margin: 40px 0;
+}
+
+.actions button {
+    background-color: #ddd;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.actions button:hover {
+    background-color: #ccc;
+}
+
+footer {
+    text-align: left;
+    margin-top: 40px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+footer ul li::before {
+    content: '●';
+    color: #fbb03b;
+    position: absolute;
+    left: 0;
+}
