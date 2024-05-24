@@ -48,8 +48,11 @@
         </section>
         <section class="actions">
             <form action="/upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" required>
-                <button type="submit">Загрузить резюме</button>
+                <label class="custom-file-upload">
+                    Выбрать файл
+                    <input type="file" name="file" required>
+                </label>
+                <button type="submit" class="upload-btn">Загрузить резюме</button>
             </form>
         </section>
         <section id="results">
